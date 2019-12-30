@@ -6,8 +6,10 @@ public class Boom extends Actor {
     private static final int BOOMLIFE = 50;
     private static final int BOOMRADIUS = 50;
     int boomCounter = BOOMLIFE;
+    private GreenfootSound boom = new GreenfootSound("boom.mp3");
     
     public Boom() {
+        boom.play();
         GreenfootImage me = new GreenfootImage(BOOMRADIUS*2,BOOMRADIUS*2);
         me.setColor(Color.RED);
         me.setTransparency(125);
