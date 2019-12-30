@@ -1,12 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.List;
 
-/**
- * Write a description of class Wall here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class Wall extends Actor {
     int wallStrength = 2000;
     int wallStage = 0;
@@ -31,6 +25,6 @@ public class Wall extends Actor {
         }
     }
     private void changeImage() {
-        setImage("brick"+wallStage+".jpg");
+        setImage("brick" + wallStage + ".jpg");
     }
 }

@@ -1,12 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.List;
 
-/**
- * Write a description of class Boom here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class Boom extends Actor
 {
     private static final int BOOMLIFE = 50;

@@ -32,11 +32,16 @@ public class Zombie extends Actor
     }
     
     private boolean canMarch() {
-        int i=0;
+        int front = getImage().getWidth()/2;
+        int i = 1;
         while(i<=step) {
-            int front = getImage().getWidth()/2;
-            Actor a = getOneObjectAtOffset(i+front, 0, Actor.class);
-            if( a != null ) {
+            List<Actor> a = getObjectsAtOffset(front+i,0,Actor.class);
+            if( a.size() > 0 ) {
+                for(int j=0;j<a.size()&&a.get(j) instanceof Zombie;j++){
+                    int toss = Greenfoot.getRandomNumber(100) < 50 ? 1 : -1;
+                    Zombie z = (Zombie) a.get(j);
+                    z.setLocation(z.getX(),z.getY()+toss);
+                }
                 return false;
             }
             i++;
