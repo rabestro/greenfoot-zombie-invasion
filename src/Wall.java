@@ -1,13 +1,13 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;  
 import java.util.List;
 
 public class Wall extends Actor {
     int wallStrength = 2000;
     int wallStage = 0;
-
+    
     public void act() {
         crumble();
-    }
+    } 
     
     private void crumble() {
         List<Zombie> army = getIntersectingObjects(Zombie.class);
@@ -24,7 +24,8 @@ public class Wall extends Actor {
             }
         }
     }
+    
     private void changeImage() {
-        setImage("brick" + wallStage + ".jpg");
+        setImage("brick"+wallStage+".png");
     }
 }

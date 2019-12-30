@@ -1,8 +1,8 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;  
+
 import java.util.List;
 
-public class Boom extends Actor
-{
+public class Boom extends Actor {
     private static final int BOOMLIFE = 50;
     private static final int BOOMRADIUS = 50;
     int boomCounter = BOOMLIFE;
@@ -15,25 +15,17 @@ public class Boom extends Actor
         setImage(me);
     }
     
-    /**
-     * Act - do whatever the Boom wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act() 
-    {
-        if( boomCounter == BOOMLIFE) {
-            destroyEverything(BOOMRADIUS);
-        }
-            
+    public void act() {
+        if( boomCounter == BOOMLIFE) destroyEverything(BOOMRADIUS);
         if( boomCounter-- == 0 ) {
             World w = getWorld();
             w.removeObject(this);
         }
-    }    
+    }  
     
     private void destroyEverything(int x) {
         List<Actor> objs = getObjectsInRange(x, Actor.class);
         World w = getWorld();
         w.removeObjects(objs);
-    }
+    } 
 }
